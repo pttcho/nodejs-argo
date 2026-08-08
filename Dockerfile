@@ -1,6 +1,6 @@
 FROM node:alpine3.22
 
-WORKDIR /tmp
+WORKDIR /app
 
 COPY index.js index.html package.json ./
 
@@ -12,4 +12,4 @@ RUN apk update && apk upgrade &&\
     chmod +x index.js &&\
     npm install
 
-CMD ["node", "index.js"]
+CMD ["node", "/app/index.js"]
